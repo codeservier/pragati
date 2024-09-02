@@ -4,7 +4,7 @@ import image1 from "../assets/Crs.png";
 import image2 from "../assets/TC.png";
 import Card from "../components/card/Card";
 
-const   Toppicks = () => {
+const Toppicks = () => {
   const navigate = useNavigate();
 
   const handleShowMoreClick = (courseType) => {
@@ -42,7 +42,9 @@ const   Toppicks = () => {
 
   return (
     <div className="container mx-auto p-4 my-4">
-      <h1 className="text-2xl font-medium text-[#800020] mb-4">Our Courses</h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12">
+        Our Courses
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {cardsData.map((card, index) => (
           <Card

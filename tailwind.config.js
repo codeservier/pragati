@@ -4,9 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#800020",
-        secondary: "#F68B33",
-        white: "#FFFFFF",
+        primary: "#4c5270",
+        secondary: "#0081a7",
+        mywhite: "#fff",
+        myblack: "#3A3A5E",
       },
       fontFamily: {
         sans: ["'Open Sans'"],

@@ -94,7 +94,8 @@ const MyLearning = () => {
           <div className="container mx-auto p-4 my-4">
             <h1
               ref={coursesRef}
-              className="text-2xl font-medium text-[#800020] mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12"
+
             >
               Our Courses
             </h1>

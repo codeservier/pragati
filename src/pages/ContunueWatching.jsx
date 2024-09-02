@@ -23,13 +23,15 @@ const ContinueWatching = () => {
     {
       id: 2,
       title: "Bank PO",
-      description: "Preparation for Bank PO exams with focus on Quant, Reasoning, English, and General Awareness.",
+      description:
+        "Preparation for Bank PO exams with focus on Quant, Reasoning, English, and General Awareness.",
       image: image2,
     },
     {
       id: 3,
       title: "NDA/CDS",
-      description: "Coaching for Defence Services exams, covering Maths, General Ability, and English.",
+      description:
+        "Coaching for Defence Services exams, covering Maths, General Ability, and English.",
       image: image3,
     },
     {
@@ -42,13 +44,15 @@ const ContinueWatching = () => {
     {
       id: 5,
       title: "RBI Grade B",
-      description: "Focused preparation for RBI Grade B, covering Economics, Finance, and general aptitude.",
+      description:
+        "Focused preparation for RBI Grade B, covering Economics, Finance, and general aptitude.",
       image: image5,
     },
     {
       id: 6,
       title: "RRB NTPC ",
-      description: "Training for RRB NTPC with emphasis on General Awareness, Arithmetic, and Reasoning.",
+      description:
+        "Training for RRB NTPC with emphasis on General Awareness, Arithmetic, and Reasoning.",
       image: image6,
     },
   ];
@@ -57,9 +61,10 @@ const ContinueWatching = () => {
   };
   return (
     <div className="container mx-auto p-4 my-4">
-      <h1 className="text-2xl font-medium text-[#800020] text-400  mb-4">
-        Popular Courses
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12">
+        Popular Coaching's
       </h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {cardsData.map((card, index) => (
           <Card
