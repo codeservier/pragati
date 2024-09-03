@@ -13,26 +13,26 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full  py-3 font-medium text-black bg-mywhite shadow-md lg:px-14">
+    <header className="fixed top-0 z-50 w-full  py-3 font-medium text-black bg-primary shadow-md lg:px-14">
       <div className=" flex items-center justify-between mx-auto">
         <Link to="/">
           <img src={logo2} alt="Logo" className="bg-cover h-[70px] w-[250px] " />
         </Link>
 
         <nav className="items-center hidden space-x-12  md:flex">
-          <Link to="/" className="hover:text-secondary text-primary">
+          <Link to="/" className="hover:text-secondary text-white"> 
             Home
           </Link>
-          <Link to="/mylearning" className="hover:text-secondary text-primary">
+          <Link to="/mylearning" className="hover:text-secondary text-white">
             Courses
           </Link>
-          <Link to="/about" className="hover:text-secondary text-primary">
+          <Link to="/about" className="hover:text-secondary text-white">
             About Us
           </Link>
-          <Link to="/new-contact" className="hover:text-secondary text-primary">
+          <Link to="/new-contact" className="hover:text-secondary text-white">
             Contact Us
           </Link>
-          <Link to="/new-contact" className="hover:text-secondary text-primary">
+          <Link to="/new-contact" className="hover:text-secondary text-white">
             FAQ
           </Link>
         </nav>
@@ -45,10 +45,9 @@ const Header = () => {
 
         <Link
           to="/register"
-          className="hidden md:block bg-primary hover:bg-white hover:border hover:border-primary
+          className="hidden md:block bg-primary hover:bg-white hover:border border-white hover:border-primary
            hover:no-underline rounded-full px-6 p-3 text-white hover:text-primary transition-all duration-200"
         >
-
           Registration
         </Link>
       </div>
