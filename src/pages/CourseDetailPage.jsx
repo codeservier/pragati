@@ -4,10 +4,10 @@ import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import MultiScrollBanner from "../components/MultiScrollBanner";
 import ReviewSection from "../components/coachingdetailstab/ReviewSection";
-// import LibraryFeature from "../components/detailsTab/LibraryFeature";
-// import SeatsAvailability from "../components/detailsTab/SeatsAvailability";
-// import { ManagementTab } from "../components/detailsTab/ManagementTab";
-// import PopUpPages from "../pages/PopUpPages.jsx";
+import OurCourses from "../components/coachingdetailstab/OurCourses.jsx";
+import SeatsAvailability from "../components/coachingdetailstab/SeatsAvailability";
+import  TopInstructor  from "../components/TopInstructor.jsx";
+import PopUpPages from "../pages/PopUpPages.jsx";
 const dummyImage = "https://via.placeholder.com/600x400.png?text=Coaching+Poster"
 
 
@@ -154,25 +154,25 @@ const LibraryDetailPage = () => {
                 </button>
                 <button
                   className={`py-2 px-4 text-sm sm:text-lg font-medium ${
-                    activeTab === "management"
+                    activeTab === "TopInstructor"
                       ? "border-b-2 border-indigo-600 text-indigo-600"
                       : "text-gray-600"
                   }`}
-                  onClick={() => setActiveTab("management")}
+                  onClick={() => setActiveTab("TopInstructor")}
                 >
                   Instructor
                 </button>
               </nav>
             </div>
             <div className="mt-4">
-              {activeTab === "features" && <LibraryFeature />}
+              {activeTab === "features" && <OurCourses />}
               {activeTab === "seat" && (
                 <SeatsAvailability userData={userData} />
               )}
               {activeTab === "reviews" && (
                 <ReviewSection rating={userData?.rating || 0} />
               )}
-              {activeTab === "management" && <ManagementTab />}
+              {activeTab === "TopInstructor" && <TopInstructor />}
             </div>
           </div>
         </div>

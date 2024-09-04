@@ -5,7 +5,7 @@ import CustomInput from "../components/customInput/CustomInput.jsx";
 
 const RegistrationPage = () => {
   const hall = ["Hall - 1", "Hall - 2", "Hall - 3", "Hall - 4", "Hall - 5"];
-  const slots = ["10", "20", "30", "40", "50", "60", "70", "80", "90"];
+  const slots = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   const [formData, setFormData] = useState({
     name: "",
