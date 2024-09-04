@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TermCondition from '../TermCondition'; 
 import AboutPage from '../AboutPage';
 import SearchPage from '../SearchPage';
-import MyLearning from '../MyLearning';
+
 import PageNotFound from '../PageNotFound';
 import RegistrationPage from '../RegistrationPage';
 import { HomePage } from '../HomePage';
@@ -23,6 +23,7 @@ import NewContact from '../NewContact';
 import Dashboard from '../../Admin/pages/Dashboard';
 import AdLayout from '../../Admin/components/shared/AdLayout';
 import Product from '../../Admin/pages/Branches';
+import AllCoachings from '../AllCoachings';
 
 
 const AppRoutes = () => {
@@ -36,7 +37,7 @@ const AppRoutes = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/new-contact" element={<NewContact />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/mylearning" element={<MyLearning />} />
+          <Route path="/mylearning" element={<AllCoachings/>} />
           <Route path="/coursedetail" element={<CourseDetailPage />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/profile/subscription" element={<Subscription />} />

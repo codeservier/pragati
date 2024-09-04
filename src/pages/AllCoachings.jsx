@@ -9,7 +9,7 @@ import image6 from "../assets/courses/Course.png";
 import Loader from "../components/loader/Loader";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const MyLearning = () => {
+const AllCoachings = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -94,10 +94,10 @@ const MyLearning = () => {
           <div className="container mx-auto p-4 my-4">
             <h1
               ref={coursesRef}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12"
+            className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-border-l border-l-8 text-primary my-12"
 
             >
-              Our Courses
+              Coachings
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {coursesData.map((card, index) => (
@@ -135,4 +135,4 @@ const MyLearning = () => {
   );
 };
 
-export default MyLearning;
+export default AllCoachings;

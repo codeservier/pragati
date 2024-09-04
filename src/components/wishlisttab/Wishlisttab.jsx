@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Loader from "../loader/Loader";
-import MyLearning from "../../pages/MyLearning";
 import Wishlist from "./Wishlist";
+import AllCoachings from "../../pages/AllCoachings";
 
 const tabs = ["All Course", "My Lists", "WishList"];
 
@@ -52,7 +52,7 @@ const PublicProfile = () => {
             </div>
           </div>
           <div className="">
-            {activeTab === "All Course" && <MyLearning />}
+            {activeTab === "All Course" && <AllCoachings />}
             {activeTab === "My Lists" && <Wishlist hedding="Wish List" />}
             {activeTab === "WishList" && <Wishlist hedding="My List" />}
           </div>

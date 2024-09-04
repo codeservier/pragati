@@ -12,63 +12,54 @@ import image5 from "../../assets/poster/5.png";
 import image6 from "../../assets/poster/5.png";
 
 const Banner = () => {
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, // Disable previous and next buttons
-    autoplay: true, // Enable auto-sliding
-    autoplaySpeed: 2000, // Slide change interval in milliseconds
+    arrows: false, 
+    autoplay: true,
+    autoplaySpeed: 2000, 
   };
 
   return (
-    <div className="self-center">
-      <Slider {...settings}>
-        <div className="h-400 w-full object-cover  ">
-          <img
-            src={image1}
-            alt="Slide 1"
-            className="h-400 w-full object-cover rounded-xl"
-          />
-        </div>
-        <div className="h-400 w-full object-cover ">
-          <img
-            src={image2}
-            alt="Slide 2"
-            className="h-400 w-full object-cover rounded-xl"
-          />
-        </div>
-        <div className="h-500 w-full object-cover">
-          <img
-            src={image3}
-            alt="Slide 3"
-            className="h-400 w-full object-cover rounded-xl"          />
-        </div>
-        <div className="h-400 w-full object-cover">
-          <img
-            src={image4}
-            alt="Slide 4"
-           className="h-400 w-full object-cover rounded-xl"
-          />
-        </div>
-        <div className="h-400 w-full object-cover">
-          <img
-            src={image5}
-            alt="Slide 5"
-            className="h-400 w-full object-cover rounded-xl"
-          />
-        </div>
-        <div className="h-400 w-full object-cover">
-          <img
-            src={image6}
-            alt="Slide 6"
-            className="h-400 w-full object-cover rounded-xl"
-          />
-        </div>
+   
+      <Slider {...settings}  className="self-center  rounded-xl shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)]">
+         
+            <img
+              src={image1}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+            <img
+              src={image1}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+            <img
+              src={image2}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+            <img
+              src={image3}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+            <img
+              src={image4}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+            <img
+              src={image5}
+              alt="Slide 1"
+              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+            />
+  
       </Slider>
-    </div>
+
   );
 };
 

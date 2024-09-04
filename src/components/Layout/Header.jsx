@@ -24,7 +24,7 @@ const Header = () => {
             Home
           </Link>
           <Link to="/mylearning" className="hover:text-secondary text-white">
-            Courses
+            Coaching's
           </Link>
           <Link to="/about" className="hover:text-secondary text-white">
             About Us
@@ -45,10 +45,10 @@ const Header = () => {
 
         <Link
           to="/register"
-          className="hidden md:block bg-primary hover:bg-white hover:border border-white hover:border-primary
-           hover:no-underline rounded-full px-6 p-3 text-white hover:text-primary transition-all duration-200"
+          className="hidden md:block bg-primary hover:bg-secondary border border-secondary 
+           hover:no-underline rounded-full px-4 p-2 text-white transition-all duration-200"
         >
-          Registration
+          Login
         </Link>
       </div>
 
