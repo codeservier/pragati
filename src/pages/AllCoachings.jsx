@@ -15,7 +15,6 @@ const AllCoachings = () => {
   const [loading, setLoading] = useState(true);
   const [allDocuments, setAllDocuments] = useState([]);
 
-
   useEffect(() => {
     const fetchCardData = async () => {
       try {
@@ -42,7 +41,7 @@ const AllCoachings = () => {
       if (location.state?.courseType === "ourCourses" && coursesRef.current) {
         const top =
           coursesRef.current.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({ top: top - 150, behavior: "smooth" });
+        window.scrollTo({ top: top - 150, behavior: "smooth" });
       } else if (
         location.state?.courseType === "techCourses" &&
         techCoursesRef.current
@@ -67,7 +66,7 @@ const AllCoachings = () => {
   }, [location]);
 
   const handleCardClick = (id) => {
-    navigate(`/coursedetail`, { state:{id}});
+    navigate(`/coursedetail`, { state: { id } });
   };
 
   return (
@@ -81,19 +80,18 @@ const AllCoachings = () => {
           <div className="container mx-auto p-4 my-4">
             <h1
               ref={coursesRef}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12"
-
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12"
             >
-              Our Courses
+              Our Coachings
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {allDocuments.map((card) => (
                 <Card
                   key={card.id}
-                  title={card.libraryname}
+                  title={card.coachingname}
                   description={card.shortdescription}
                   image={card.coachingLogoUrl}
-                  onClick={() => handleCardClick(card.id)} 
+                  onClick={() => handleCardClick(card.id)}
                 />
               ))}
             </div>
@@ -104,4 +102,4 @@ const AllCoachings = () => {
   );
 };
 
-export default MyLearning;
+export default AllCoachings;

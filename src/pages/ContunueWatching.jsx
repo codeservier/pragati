@@ -29,7 +29,7 @@ const ContinueWatching = () => {
           id: doc.id,
           title: doc.title || "No Title",
           district: doc.district || "No District",
-          phoneNumber: doc.phoneNumber || "No Phone Number",
+          coachingname: doc.coachingname || "No Coaching Name",
           address: doc.address || "No Address",
           image: doc.coachingLogoUrl || "default-image-url",
         }));
@@ -94,7 +94,7 @@ const ContinueWatching = () => {
               {cardsData.map((card) => (
                 <Card
                   key={card.id}
-                  title={card.phoneNumber}
+                  title={card.coachingname}
                   description={card.address}
                   image={card.image}
                   onClick={() => handleCardClick(card.id)}

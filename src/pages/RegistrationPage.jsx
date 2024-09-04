@@ -245,7 +245,7 @@ const RegistrationPage = () => {
         id="hall"
         value={formData.hall}
         onChange={handlehallChange}
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#42c4e2]"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary"
       >
         <option value="">Select Hall</option>
         {hall.map((hall, index) => (
@@ -258,7 +258,7 @@ const RegistrationPage = () => {
         {formData.selectedHall.map((hall, index) => (
           <div
             key={index}
-            className="flex items-center bg-[#42c4e2] text-white rounded-full py-1 px-4 border-b border-gray-200 mb-2"
+            className="flex items-center bg-primary text-white rounded-full py-1 px-4 border-b border-gray-200 mb-2"
           >
             <span className="mr-2">{hall}</span>
             <button
@@ -283,7 +283,7 @@ const RegistrationPage = () => {
         id="slot"
         value={formData.slot}
         onChange={handleSlotChange}
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#42c4e2]"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary"
       >
         <option value="">Number of Chairs</option>
         {slots.map((slot, index) => (
@@ -296,7 +296,7 @@ const RegistrationPage = () => {
         {formData.selectedSlots.map((slot, index) => (
           <div
             key={index}
-            className="flex justify-between items-center bg-[#42c4e2] text-white rounded-full px-4 py-2"
+            className="flex justify-between items-center bg-primary text-white rounded-full px-4 py-2"
           >
             <span className="mr-2">Slot {slot}</span>
             <button
@@ -362,7 +362,7 @@ const RegistrationPage = () => {
 
           <button
             type="submit"
-            className="w-full py-3 text-white bg-[#42c4e2] rounded-full hover:bg-secondary"
+            className="w-full py-3 text-white bg-primary rounded-full hover:bg-secondary"
           >
             Save & Continue
           </button>

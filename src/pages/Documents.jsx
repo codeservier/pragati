@@ -371,7 +371,7 @@ const Documents = () => {
         <button
           type="button"
           onClick={handleRegister}
-          className="w-full py-3 text-white bg-[#42c4e2] rounded-full hover:bg-secondary"
+          className="w-full py-3 text-white bg-primary rounded-full hover:bg-secondary"
         >
           Register
         </button>

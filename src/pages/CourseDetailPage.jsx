@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import MultiScrollBanner from "../components/MultiScrollBanner";
-// import ReviewSection from "../components/detailsTab/ReviewSection";
+import ReviewSection from "../components/coachingdetailstab/ReviewSection";
 // import LibraryFeature from "../components/detailsTab/LibraryFeature";
 // import SeatsAvailability from "../components/detailsTab/SeatsAvailability";
 // import { ManagementTab } from "../components/detailsTab/ManagementTab";
@@ -85,7 +85,7 @@ const LibraryDetailPage = () => {
           <div className="pl-0 lg:pl-4 my-0 sm:my-0 flex flex-col justify-between">
             <div>
               <h1 className="text-3xl font-bold mb-   2">
-                {userData?.libraryname || "Course Title"}
+                {userData?.coachingname || "Course Title"}
               </h1>
               <p className="text-gray-700 mb-4">
                 {userData?.shortdescription || "Course Description"}
@@ -102,7 +102,7 @@ const LibraryDetailPage = () => {
                 {userData?.longdescription || "Course Details"}
               </div>
               <div className="text-gray-700 mb-4">
-               Library owner name :- 
+               Coaching owner name :- 
                 <span className="font-semibold text-[#F68B33]">
                   {userData?.name || " Instructor"}
                 </span>
@@ -178,7 +178,7 @@ const LibraryDetailPage = () => {
         </div>
         <div className="my-3">
           <h1 className="text-3xl font-bold mb-2">
-            Here is some other library in your location
+            Here is some other Caoching in your location
           </h1>
           <p className="text-gray-700 mb-4">
             Enroll in our in-depth courses from top-rated instructors
@@ -190,8 +190,8 @@ const LibraryDetailPage = () => {
         {showPopUp && (
           <PopUpPages
             onClose={() => setShowPopUp(false)}
-            posterImageUrl={userData?.libraryLogoUrl || dummyImage}
-            libraryName={userData?.name}
+            posterImageUrl={userData?.coachingLogoUrl|| dummyImage}
+            coachingname={userData?.name}
             email={userData?.email}
             mobileNumber={userData?.phoneNumber}
           />
