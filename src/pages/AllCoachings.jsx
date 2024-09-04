@@ -104,4 +104,4 @@ const AllCoachings = () => {
   );
 };
 
-export default MyLearning;
+export default AllCoachings;
