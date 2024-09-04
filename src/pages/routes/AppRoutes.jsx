@@ -17,6 +17,7 @@ import PaymentMethod from '../../components/profile/PaymentMethod';
 import PublicProfile from '../../components/profile/PublicProfile';
 import Wishlisttab from '../../components/wishlisttab/Wishlisttab';
 import PaymentPage from '../../components/PaymentPage';
+import Documents from '../Documents';
 import CartPage from '../CartPage';
 import Checkout from './Checkout';
 import NewContact from '../NewContact';
@@ -47,6 +48,7 @@ const AppRoutes = () => {
           <Route path="/profile" element={<Myprofile />} />
           <Route path="/lecture" element={<LecturePage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/document" element={<Documents />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/terms-and-conditions" element={<TermCondition />} />
           <Route path="/payment" element={<PaymentPage />} />

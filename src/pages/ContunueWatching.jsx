@@ -1,82 +1,110 @@
-import React from "react";
-import image1 from "../assets/courses/Course.png";
-import image2 from "../assets/courses/Course.png";
-import image3 from "../assets/courses/Course.png";
-import image4 from "../assets/courses/Course.png";
-import image5 from "../assets/courses/Course.png";
-import image6 from "../assets/courses/Course.png";
-
+import React, { useEffect, useState, useRef } from "react";
 import Card from "../components/card/Card";
-import { useNavigate, useParams } from "react-router-dom";
+
+import Loader from "../components/loader/Loader";
+import { useNavigate, useLocation } from "react-router-dom";
+import { db, collection, getDocs } from "../../firebase";
 
 const ContinueWatching = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
-  const cardsData = [
-    {
-      id: 1,
-      title: "SSC CGL",
-      description:
-        "Focused training for SSC CGL, including Quantitative Aptitude, Reasoning, English, and General Awareness.",
-      image: image1,
-    },
-    {
-      id: 2,
-      title: "Bank PO",
-      description:
-        "Preparation for Bank PO exams with focus on Quant, Reasoning, English, and General Awareness.",
-      image: image2,
-    },
-    {
-      id: 3,
-      title: "NDA/CDS",
-      description:
-        "Coaching for Defence Services exams, covering Maths, General Ability, and English.",
-      image: image3,
-    },
-    {
-      id: 4,
-      title: "TET",
-      description:
-        "Preparation for Teacher Eligibility Test, focusing on pedagogy, languages, and subject-specific content.",
-      image: image4,
-    },
-    {
-      id: 5,
-      title: "RBI Grade B",
-      description:
-        "Focused preparation for RBI Grade B, covering Economics, Finance, and general aptitude.",
-      image: image5,
-    },
-    {
-      id: 6,
-      title: "RRB NTPC ",
-      description:
-        "Training for RRB NTPC with emphasis on General Awareness, Arithmetic, and Reasoning.",
-      image: image6,
-    },
-  ];
-  const handleCardClick = (id) => {
-    navigate(`/coursedetail`);
-  };
-  return (
-    <div className="container mx-auto p-4 my-4">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-border-l border-l-8 text-primary my-12">
-        Popular Coaching's
-      </h1>
+  const location = useLocation();
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cardsData.map((card, index) => (
-          <Card
-            key={index}
-            title={card.title}
-            description={card.description}
-            image={card.image}
-            onClick={() => handleCardClick()}
-          />
-        ))}
-      </div>
-    </div>
+  const coursesRef = useRef(null);
+  const techCoursesRef = useRef(null);
+
+  const [loading, setLoading] = useState(true);
+  const [cardsData, setCardsData] = useState([]);
+
+  useEffect(() => {
+    const fetchCardData = async () => {
+      try {
+        setLoading(true);
+        const collectionRef = collection(db, "registration");
+        const querySnapshot = await getDocs(collectionRef);
+        const allDocuments = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        const cardData = allDocuments.map((doc) => ({
+          id: doc.id,
+          title: doc.title || "No Title",
+          district: doc.district || "No District",
+          phoneNumber: doc.phoneNumber || "No Phone Number",
+          address: doc.address || "No Address",
+          image: doc.coachingLogoUrl || "default-image-url",
+        }));
+
+        setCardsData(cardData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+    fetchCardData();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (location.state?.courseType === "ourCourses" && coursesRef.current) {
+        const top =
+          coursesRef.current.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: top - 150, behavior: "smooth" });
+      } else if (
+        location.state?.courseType === "techCourses" &&
+        techCoursesRef.current
+      ) {
+        const top =
+          techCoursesRef.current.getBoundingClientRect().top +
+          window.pageYOffset;
+        window.scrollTo({ top: top - 150, behavior: "smooth" });
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    const timer = setTimeout(() => {
+      handleScroll();
+      scrollToTop();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  const handleCardClick = (id) => {
+    // console.log(card);
+    navigate(`/coursedetail`, { state:{id }});
+  };
+
+  return (
+    <>
+      {loading ? (
+        <div className="min-h-[80vh] flex items-center justify-center">
+          <Loader />
+        </div>
+      ) : (
+        <div className="max-w-screen-xl mx-auto p-2">
+          <div className="container mx-auto p-4 my-4">
+            <h1 ref={coursesRef} className="text-2xl font-medium mb-4">
+              All Coaching
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cardsData.map((card) => (
+                <Card
+                  key={card.id}
+                  title={card.phoneNumber}
+                  description={card.address}
+                  image={card.image}
+                  onClick={() => handleCardClick(card.id)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
