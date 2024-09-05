@@ -45,8 +45,8 @@ const Header = () => {
 
         <Link
           to="/register"
-          className="hidden md:block bg-primary hover:bg-secondary border border-secondary 
-           hover:no-underline rounded-full px-4 p-2 text-white transition-all duration-200"
+          className="hidden md:block hover:bg-primary bg-secondary border border-secondary 
+           hover:no-underline rounded-full px-8 p-2 text-white transition-all duration-200"
         >
           Login
         </Link>
