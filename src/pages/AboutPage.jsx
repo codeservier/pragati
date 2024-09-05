@@ -1,158 +1,315 @@
-import React, { useEffect, useState } from "react";
-import SingleBanner from "../components/banner/SingleBanner";
-import image from "../assets/concept8.png";
-import image1 from "../assets/c2.jpg";
-import image2 from "../assets/c5.jpg";
-import image3 from "../assets/c6.jpg";
-import mission from "../assets/complete-the-mission.svg";
-import TopInstructorCard from "../components/card/TopInstructorCard";
-import Loader from "../components/loader/Loader";
 
-const AboutPage = () => {
-  const [loading, setLoading] = useState(true);
-  const cardsData = [
-    {
-      title: "Fred Louis",
-      description: "To aim for Equity and inclusivity in Education",
-      image: image1,
-    },
-    {
-      title: "Fred Louis",
-      description: "To reach learners in every corner of the country",
-      image: image2,
-    },
-    {
-      title: "Fred Louis",
-      description: "To build a business sustainability",
-      image: image3,
-    },
-  ];
+export default function App() {
+  function fok() {
+    var j = document.getElementById("arr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/premium/png-64-thumb/chevron-arrow-3883460-3231250.png)";
+  }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+  function kof() {
+    var j = document.getElementById("arr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/free/png-64/right-arrow-1438234-1216195.png)";
+  }
+
+  function gok() {
+    let j = document.getElementById("brr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/premium/png-64-thumb/chevron-arrow-3883460-3231250.png)";
+  }
+
+  function kog() {
+    let j = document.getElementById("brr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/free/png-64/right-arrow-1438234-1216195.png)";
+  }
+
+  function hok() {
+    let j = document.getElementById("crr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/premium/png-64-thumb/chevron-arrow-3883460-3231250.png)";
+  }
+
+  function koh() {
+    let j = document.getElementById("crr");
+    j.style.backgroundImage =
+      "url(https://cdn.iconscout.com/icon/free/png-64/right-arrow-1438234-1216195.png)";
+  }
+
+  window.onscroll = function () {
+    jet();
+  };
+
+  function jet() {
+    var ilake = document.getElementById("head");
+    ilake.style.top = "0px";
+    ilake.style.position = "sticky";
+  }
+
+  window.addEventListener("scroll", () => {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var wnd = window.innerHeight;
+      var rtop = reveals[i].getBoundingClientRect().top;
+      var rpoint = 100;
+
+      if (rtop < wnd - rpoint) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  });
 
   return (
-    <>
-      {loading ? (
-        <div className="min-h-[80vh] flex items-center justify-center">
-          <Loader />
+    <div className="App">
+   
+
+  
+
+      <main className="bg-gray-100 p-8">
+        <div id="front" className="text-center">
+          <h1 className="text-3xl font-bold mb-4">Welcome, To Ecera System</h1>
+          <img
+            src="https://cdni.iconscout.com/illustration/premium/thumb/about-us-1805547-1537820.png"
+            alt="Welcome"
+            className="mx-auto mb-4"
+          />
+          <p className="text-lg">
+            " Our goal is to remove any technical or financial barriers that can
+            prevent you from making your own website. Our powerful tools empower
+            individuals and business owners to create a website, sell online, or
+            reach global audiences. Whether you're a beginner or website expert,
+            we're excited to help you on your journey! "
+          </p>
         </div>
-      ) : (
-        <>
-          <section className="bg-[#f5f5dc] mb-8">
-            <div className="max-w-screen-xl mx-auto px-6 ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 ">
-                <div className="py-12 pr-8">
-                  <h1 className="text-4xl mb-5 font-sans">
-                    About Pragati Coaching Classes
-                  </h1>
-                  <p className="text-[#000] font-normal text-xl ">
-                    Pragati Coaching Classes is dedicated to empowering students
-                    to achieve academic excellence and personal growth. With a
-                    team of experienced educators and a student-centric
-                    approach, we provide comprehensive coaching that covers
-                    every aspect of learning. Our goal is to help students build
-                    a strong foundation, excel in their studies, and develop the
-                    skills needed for lifelong success. At Pragati, we believe
-                    in nurturing potential and guiding each student on their
-                    path to success.
-                  </p>
-                </div>
-                <div className="flex justify-center items-center">
-                  <SingleBanner image={image} />
-                </div>
-              </div>
-            </div>
-          </section>
 
-          <section className="bg-[#f5f5dc] py-10 mb-8">
-            <div className="container pl-10">
-              <h1 className="text-4xl mb-5 font-sans">Our Mission</h1>
-              <div className="max-w-screen-xl mx-auto px-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 ">
-                  <div className="py-0 pr-8">
-                    <ul className="text-[#000] font-normal text-xl list-disc pl-5">
-                      <li>
-                        <span className="text-[#000] font-bold">
-                          {" "}
-                          Foster Academic Excellence:{" "}
-                        </span>{" "}
-                        Provide high-quality education that enables students to
-                        achieve their full academic potential.
-                      </li>
-                      <br />
-                      <li>
-                        {" "}
-                        <span className="text-[#000] font-bold">
-                          Inspire Lifelong Learning:
-                        </span>{" "}
-                        Cultivate a love for learning that encourages students
-                        to continually grow and evolve in their educational
-                        journey.
-                      </li>
-                      <br />
-                      <li>
-                        {" "}
-                        <span className="text-[#000] font-bold">
-                          Empower Students:{" "}
-                        </span>
-                        Equip students with the skills, confidence, and
-                        knowledge needed to succeed in their academic and
-                        professional lives.
-                      </li>
-                      <br />
-                      <li>
-                        <span className="text-[#000] font-bold">
-                          Promote Holistic Development:
-                        </span>{" "}
-                        Focus on the overall development of students by
-                        nurturing their intellectual, emotional, and social
-                        growth.
-                      </li>
-                      <br />
-                      <li>
-                        {" "}
-                        <span className="text-[#000] font-bold">
-                          {" "}
-                          Support and Guide:{" "}
-                        </span>
-                        Offer personalized guidance and support to help each
-                        student overcome challenges and reach their goals.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <SingleBanner image={mission} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+        <div id="first" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
+          <img
+            src="https://cdni.iconscout.com/illustration/premium/thumb/growing-business-by-digital-marketing-4217800-3501667.png"
+            alt="Technology"
+            className="w-full h-48 object-cover mb-4"
+          />
+          <h1 className="text-2xl font-bold mb-2">We Offer Innovative Technology Solutions</h1>
+          <p className="text-lg mb-4">
+            EceraSystem is a full-service digital marketing agency with a long
+            history of delivering great results for our clients. We take an
+            individualized approach to every customer project. In some cases
+            we may focus more on SEO, while in others we’ll dig more into PPC,
+            social media or conversion optimization.
+          </p>
+          <h2 className="text-xl font-semibold">UI/UX Design (90%)</h2>
+          <div className="comm flex space-x-4 mb-4">
+            <div id="comm1" className="bg-red-500 h-2 w-full"></div>
+          </div>
+          <h2 className="text-xl font-semibold">APP Development (85%)</h2>
+          <div className="comm flex space-x-4 mb-4">
+            <div id="comm2" className="bg-red-500 h-2 w-full"></div>
+          </div>
+          <h2 className="text-xl font-semibold">WEB Development (70%)</h2>
+          <div className="comm flex space-x-4 mb-4">
+            <div id="comm3" className="bg-red-500 h-2 w-full"></div>
+          </div>
+        </div>
 
-          <section className="bg-[#f5f5dc] mb-8">
-            <div className="max-w-screen-xl mx-auto px-6 ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 ">
-                <div className="py-12 pr-8">
-                  <h1 className="text-4xl mb-5 font-sans">
-                  Our Vision
-                  </h1>
-                  <p className="text-[#000] font-normal text-xl ">
-                  Pragati Coaching Classes is to be a leading educational institution that transforms lives through quality education. We aspire to create a nurturing environment where every student is inspired to achieve academic excellence, develop a passion for lifelong learning, and become a confident, responsible, and successful individual. We aim to empower our students to not only excel in their studies but also to contribute positively to society, shaping a brighter future for themselves and the world.
-                  </p>
-                </div>
-                <div className="flex justify-center items-center">
-                  <SingleBanner image={image} />
-                </div>
-              </div>
+        <div id="fourth" className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg">
+          <h2 className="text-xl font-semibold mb-4">TECHNOLOGY INDEX</h2>
+          <h1 className="text-3xl font-bold mb-4">
+            Real Time Monitoring Your Infrastructure Branded Digital Solutions
+          </h1>
+          <div id="fourth_cards" className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="text-center">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/data-analysis-27-681042.png"
+                alt="Data Analytics"
+                className="mx-auto mb-2"
+              />
+              <p>DATA ANALYTICS</p>
             </div>
-          </section>
-        </>
-      )}
-    </>
+            <div className="text-center">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/ui-ux-designer-2755964-2289563.png"
+                alt="UI/UX Design"
+                className="mx-auto mb-2"
+              />
+              <p>UI/UX DESIGN</p>
+            </div>
+            <div className="text-center">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/web-development-3-478143.png"
+                alt="Web Development"
+                className="mx-auto mb-2"
+              />
+              <p>WEB DEVELOPMENT</p>
+            </div>
+            <div className="text-center">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/qa-testing-3919162-3246433.png"
+                alt="Q&A Testing"
+                className="mx-auto mb-2"
+              />
+              <p>Q&A TESTING</p>
+            </div>
+            <div className="text-center">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/team-135-386667.png"
+                alt="Dedicated Team"
+                className="mx-auto mb-2"
+              />
+              <p>DEDICATED TEAM</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="second" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
+          <div className="container flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-4 md:mb-0">
+              <h1 className="text-2xl font-bold mb-2">WE PROVIDE</h1>
+              <h2 className="text-xl font-semibold mb-2">Remote Employee</h2>
+              <p className="text-lg">
+                A huge pool of talent from every domain available for your
+                office. Solve your freelancing problems by letting us help you
+                find the most suitable employee or a whole team that won't let
+                you down. Everything is managed by Indirect Employee staff!
+              </p>
+            </div>
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/men-and-woman-characters-work-together-on-project-presentation-2706075-2259871.png"
+              alt="Remote Employee"
+              className="md:w-1/2"
+            />
+          </div>
+          <div className="container flex flex-col md:flex-row items-center justify-between mt-8">
+            <div className="md:w-1/2 mb-4 md:mb-0">
+              <h1 className="text-2xl font-bold mb-2">WE HAVE</h1>
+              <h2 className="text-xl font-semibold mb-2">Global Partnership</h2>
+              <p className="text-lg">
+                Our Global partners are spread across 12 countries and our client base
+                is growing day by day. Many of my clients are repeat customers
+                and several have come to us through high recommendation and
+                referrals. Our clients hail from different domains.
+              </p>
+            </div>
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/business-partnership-2975816-2476892.png"
+              alt="Global Partnership"
+              className="md:w-1/2 mt-8 md:mt-0"
+            />
+          </div>
+          <div className="container flex flex-col md:flex-row items-center justify-between mt-8">
+            <div className="md:w-1/2 mb-4 md:mb-0">
+              <h1 className="text-2xl font-bold mb-2">OUR GOAL</h1>
+              <h2 className="text-xl font-semibold mb-2">Same Quality at Low Cost</h2>
+              <p className="text-lg">
+                We have unique and revolutionary business principles, ‘Same
+                quality but significantly lower cost’. We aim to fulfill the
+                long-standing outsourcing vacuum felt by Small Medium
+                Enterprises across the country who, till now, were dependent
+                mostly on offshore freelancers. The hired professionals match
+                their western counterparts in skills, qualifications, and
+                experience along with the added advantage of attractive low
+                costs.
+              </p>
+            </div>
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/business-goal-4352585-3618767.png"
+              alt="Our Goal"
+              className="md:w-1/2 mt-8 md:mt-0"
+            />
+          </div>
+          <div className="container flex flex-col md:flex-row items-center justify-between mt-8">
+            <div className="md:w-1/2 mb-4 md:mb-0">
+              <h1 className="text-2xl font-bold mb-2">OUR STRENGTHS</h1>
+              <h2 className="text-xl font-semibold mb-2">Intelligent Use of Technology and Human Resource</h2>
+              <p className="text-lg">
+                We provide every client with a dedicated, full-time work from
+                home employee from their comfortable place. To successfully achieve this
+                objective, we rely on management, infrastructure, hardware, and
+                the latest technology to bridge physical distance and time zone
+                differences. We provide the experience of making employees work
+                from home for the company as real as if they were working in the company.
+              </p>
+            </div>
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/teamwork-3560853-2989144.png"
+              alt="Our Strengths"
+              className="md:w-1/2 mt-8 md:mt-0"
+            />
+          </div>
+        </div>
+
+        <div id="third" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
+          <h3 className="text-center text-2xl font-semibold mb-4">OUR PROCESS</h3>
+          <h1 className="text-center text-3xl font-bold mb-4">
+            Driving Client Results Utilizing New Innovation Points of View
+          </h1>
+          <div id="third_cards" className="space-y-4">
+            <div>
+              <h2 className="text-xl font-semibold mb-2">End to End Solutions and Services Guaranteed</h2>
+              <p>
+                Fusce nec tellus sed augue semper porta. Mauris massa.
+                Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold mb-2">Ahead of The Curve We Future-proof Your IT</h2>
+              <p>
+                Fusce nec tellus sed augue semper porta. Mauris massa.
+                Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold mb-2">Experience Certainty Every Project Executed Successfully</h2>
+              <p>
+                Fusce nec tellus sed augue semper porta. Mauris massa.
+                Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="fifth" className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg">
+          <h1 className="text-2xl font-bold mb-4">ECERA SYSTEM</h1>
+          <div className="flex flex-col space-y-4">
+            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/address-blue-circle-location-map-marker-navigation-icon-45868.png"
+                alt="Address"
+                className="w-8 h-8"
+              />
+              <span>
+                <h3 className="text-lg font-semibold">Address</h3>
+                <p>4813 Woodland Ave Royal Oak, Michigan - 48073, USA</p>
+              </span>
+            </a>
+            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-64/phone-2666572-2212584.png"
+                alt="Phone"
+                className="w-8 h-8"
+              />
+              <span>
+                <h3 className="text-lg font-semibold">Phone</h3>
+                <p>+1 248 672 1972</p>
+              </span>
+            </a>
+            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-64/gmail-2489176-2082900.png"
+                alt="E-mail"
+                className="w-8 h-8"
+              />
+              <span>
+                <h3 className="text-lg font-semibold">E-mail</h3>
+                <p>Sales@Ecerasystem.com</p>
+              </span>
+            </a>
+          </div>
+        </div>
+      </main>
+
+  
+    </div>
   );
-};
+}
 
-export default AboutPage;
