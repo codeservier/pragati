@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiAlertCircle, FiAlignJustify, FiCrosshair } from "react-icons/fi";
-import logo from "../../assets/logo1.png";
+// import logo from "../../assets/logo1.png";
 import { Link } from "react-router-dom";
 import cross from "../../assets/download.png";
 import logo2 from "../../assets/svg/logo.svg"

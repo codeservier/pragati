@@ -1,11 +1,11 @@
 // src/components/TopInstructor.jsx
 import React from "react";
-import image1 from "../assets/sk.png";
-import image2 from "../assets/ak.png";
-import image3 from "../assets/vk.png";
-import image4 from "../assets/image.png";
-import image5 from "../assets/d.png";
-import image6 from "../assets/v.png";
+import image1 from "../assets/instructor/sk.png";
+import image2 from "../assets/instructor/ak.png";
+import image3 from "../assets/instructor/vk.png";
+import image4 from "../assets/instructor/image.png";
+import image5 from "../assets/instructor/d.png";
+import image6 from "../assets/instructor/v.png";
 
 import Card from "../components/card/Card";
 import TopInstructorCard from "./card/TopInstructorCard";

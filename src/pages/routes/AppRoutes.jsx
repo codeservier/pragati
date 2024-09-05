@@ -10,11 +10,11 @@ import { HomePage } from '../HomePage';
 import Layout from '../../components/Layout/Layout';
 import Login from '../Login';
 import CourseDetailPage from '../CourseDetailPage';
-import LecturePage from '../LecturePage';
-import Myprofile from '../../components/profile/Myprofile';
-import Subscription from '../../components/profile/Subscription';
-import PaymentMethod from '../../components/profile/PaymentMethod';
-import PublicProfile from '../../components/profile/PublicProfile';
+// import LecturePage from '../LecturePage';
+// import Myprofile from '../../components/profile/Myprofile';
+// import Subscription from '../../components/profile/Subscription';
+// import PaymentMethod from '../../components/profile/PaymentMethod';
+// import PublicProfile from '../../components/profile/PublicProfile';
 import Wishlisttab from '../../components/wishlisttab/Wishlisttab';
 import PaymentPage from '../../components/PaymentPage';
 import Documents from '../Documents';
@@ -41,12 +41,12 @@ const AppRoutes = () => {
           <Route path="/mylearning" element={<AllCoachings/>} />
           <Route path="/coursedetail" element={<CourseDetailPage />} />
           <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/profile/subscription" element={<Subscription />} />
-          <Route path="/profile/paymentMethods" element={<PaymentMethod />} />
-          <Route path="/profile/publicProfile" element={<PublicProfile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Myprofile />} />
-          <Route path="/lecture" element={<LecturePage />} />
+          {/* <Route path="/profile/subscription" element={<Subscription />} /> */}
+          {/* <Route path="/profile/paymentMethods" element={<PaymentMethod />} /> */}
+          {/* <Route path="/profile/publicProfile" element={<PublicProfile />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/profile" element={<Myprofile />} /> */}
+          {/* <Route path="/lecture" element={<LecturePage />} /> */}
           <Route path="/cart" element={<CartPage />} />
           <Route path="/document" element={<Documents />} />
           <Route path="/checkout" element={<Checkout />} />

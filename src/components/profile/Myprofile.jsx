@@ -5,10 +5,10 @@ import SecurityManagement from "./SecurityManagement";
 import Subscription from "./Subscription";
 import { useNavigate } from "react-router-dom";
 import PaymentMethod from "./PaymentMethod";
-import Privacy from "./Privacy";
+// import Privacy from "./Privacy";
 import Notifications from "./Notifications";
-import CloseAccount from "./CloseAccount";
-import PublicProfile from "./PublicProfile";
+// import CloseAccount from "./CloseAccount";
+// import PublicProfile from "./PublicProfile";
 
 const tabs = [
   "View public profile",

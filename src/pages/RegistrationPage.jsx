@@ -277,7 +277,7 @@ const RegistrationPage = () => {
     {/* Seats Section */}
     <div className="flex-1">
       <label className="mb-1 font-semibold text-gray-400">
-        Select Chair
+        Select slot
       </label>
       <select
         id="slot"
@@ -285,10 +285,10 @@ const RegistrationPage = () => {
         onChange={handleSlotChange}
         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary"
       >
-        <option value="">Number of Chairs</option>
+        <option value="">Number of Slots</option>
         {slots.map((slot, index) => (
           <option key={index} value={slot}>
-            Chair - {slot}
+            Slot - {slot}
           </option>
         ))}
       </select>

@@ -5,13 +5,13 @@ import { doc, getDoc } from "firebase/firestore";
 import MultiScrollBanner from "../components/MultiScrollBanner";
 import ReviewSection from "../components/coachingdetailstab/ReviewSection";
 import OurCourses from "../components/coachingdetailstab/OurCourses.jsx";
-import SeatsAvailability from "../components/coachingdetailstab/SeatsAvailability";
-import  TopInstructor  from "../components/TopInstructor.jsx";
+import  OurInstructor  from "../pages/OurInstructor.jsx";
 import PopUpPages from "../pages/PopUpPages.jsx";
+import SlotsAvailability from "../components/coachingdetailstab/SlotsAvailability.jsx";
 const dummyImage = "https://via.placeholder.com/600x400.png?text=Coaching+Poster"
 
 
-const LibraryDetailPage = () => {
+const CourseDetailPage = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { id } = state;
@@ -134,11 +134,11 @@ const LibraryDetailPage = () => {
                 </button>
                 <button
                   className={`py-2 px-4 text-sm sm:text-lg font-medium ${
-                    activeTab === "seat"
+                    activeTab === "slot"
                       ? "border-b-2 border-indigo-600 text-indigo-600"
                       : "text-gray-600"
                   }`}
-                  onClick={() => setActiveTab("seat")}
+                  onClick={() => setActiveTab("slot")}
                 >
                   Slot Availability
                 </button>
@@ -154,11 +154,11 @@ const LibraryDetailPage = () => {
                 </button>
                 <button
                   className={`py-2 px-4 text-sm sm:text-lg font-medium ${
-                    activeTab === "TopInstructor"
+                    activeTab === "OurInstructor"
                       ? "border-b-2 border-indigo-600 text-indigo-600"
                       : "text-gray-600"
                   }`}
-                  onClick={() => setActiveTab("TopInstructor")}
+                  onClick={() => setActiveTab("OurInstructor")}
                 >
                   Instructor
                 </button>
@@ -166,13 +166,13 @@ const LibraryDetailPage = () => {
             </div>
             <div className="mt-4">
               {activeTab === "features" && <OurCourses />}
-              {activeTab === "seat" && (
-                <SeatsAvailability userData={userData} />
+              {activeTab === "slot" && (
+                <SlotsAvailability numberOfSlot={userData?.slot} />
               )}
               {activeTab === "reviews" && (
                 <ReviewSection rating={userData?.rating || 0} />
               )}
-              {activeTab === "TopInstructor" && <TopInstructor />}
+              {activeTab === "OurInstructor" && <OurInstructor />}
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ const LibraryDetailPage = () => {
             Here is some other Caoching in your location
           </h1>
           <p className="text-gray-700 mb-4">
-            Enroll in our in-depth courses from top-rated instructors
+            Enroll in our in-depth courses from Our-rated instructors
           </p>
           <MultiScrollBanner />
         </div>
@@ -201,4 +201,4 @@ const LibraryDetailPage = () => {
   );
 };
 
-export default LibraryDetailPage;
+export default CourseDetailPage;

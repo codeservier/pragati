@@ -16,6 +16,9 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import CustomInput from "../components/customInput/CustomInput.jsx";
 // import Logo from "../assets/logo/Logo";
 
+
+
+
 const Documents = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -68,11 +71,32 @@ const Documents = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setLogoFile(file);
-      setPreviewUrl(URL.createObjectURL(file)); // Create a URL for the image
+      const img = new Image();
+      img.src = URL.createObjectURL(file);
+      img.onload = () => {
+        if (img.width === 512 && img.height === 512) {
+          setLogoFile(file);
+          setPreviewUrl(URL.createObjectURL(file)); // Create a URL for the image
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            coachingLogo: "", // Clear any previous errors
+          }));
+        } else {
+          setLogoFile(null);
+          setPreviewUrl("");
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            coachingLogo: "Image must be 512X512 pixels.",
+          }));
+        }
+      };
     } else {
       setLogoFile(null);
       setPreviewUrl("");
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        coachingLogo: "Please upload a logo image",
+      }));
     }
   };
 
