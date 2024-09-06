@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full  py-3 font-medium text-black bg-primary shadow-md lg:px-14">
+    <header className="sticky top-0 z-50 w-full  py-3 font-medium text-black bg-primary shadow-md lg:px-14">
       <div className=" flex items-center justify-between mx-auto">
         <Link to="/">
           <img src={logo2} alt="Logo" className="bg-cover h-[70px] w-[250px] " />

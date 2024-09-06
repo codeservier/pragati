@@ -9,7 +9,6 @@ import image2 from "../../assets/poster/2.png";
 import image3 from "../../assets/poster/3.png";
 import image4 from "../../assets/poster/4.png";
 import image5 from "../../assets/poster/5.png";
-import image6 from "../../assets/poster/5.png";
 
 const Banner = () => {
   const settings = {
@@ -18,48 +17,56 @@ const Banner = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, 
+    arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000, 
+    autoplaySpeed: 2000,
   };
 
   return (
-   
-      <Slider {...settings}  className="self-center  rounded-xl shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)]">
-         
+    <div className="w-full flex items-center justify-center">
+      <div className="relative w-full h-full">
+        <Slider
+          {...settings}
+          className=""
+        >
+          <div>
             <img
               src={image1}
               alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+              className="w-full h-full object-cover "
             />
-            <img
-              src={image1}
-              alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
-            />
+          </div>
+          <div>
             <img
               src={image2}
-              alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+              alt="Slide 2"
+              className="w-full h-full object-cover "
             />
+          </div>
+          <div>
             <img
               src={image3}
-              alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+              alt="Slide 3"
+              className="w-full h-full object-cover "
             />
+          </div>
+          <div>
             <img
               src={image4}
-              alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+              alt="Slide 4"
+              className="w-full h-full object-cover "
             />
+          </div>
+          <div>
             <img
               src={image5}
-              alt="Slide 1"
-              className="h-full w-full object-cover rounded-xl inner-slide slide-container flex justify-center items-center p-1"
+              alt="Slide 5"
+              className="w-full h-full object-cover "
             />
-  
-      </Slider>
-
+          </div>
+        </Slider>
+      </div>
+    </div>
   );
 };
 

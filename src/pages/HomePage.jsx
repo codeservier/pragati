@@ -9,6 +9,9 @@ import Loader from "../components/loader/Loader";
 import Testimonials from "../components/Testimonials";
 import MetricsPage from "../components/Metrics";
 import CourseProvideByCoaching from "../components/CourseProvideByCoaching";
+import HeroSection from "../components/HeroBottom";
+import HeroBottom from "../components/HeroBottom";
+import StatsSection from "../components/StateSection";
 export const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
@@ -20,30 +23,17 @@ export const HomePage = () => {
         </div>
       ) : (
         <>
-          <div className="max-w-screen mx-auto px-1  " >
             <Banner />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-2 ">
+            <HeroBottom/>
+            <StatsSection/>
             <ContunueWatching />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-6">
             <SingleBanner  />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-6 ">
             <Upcoming />
-          </div>
-          <div className="max-w-screen-xl  flex items-center justify-center mx-auto px-2 ">
             <CourseProvideByCoaching />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-2 ">
             <TopInstructor />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-2 ">
             <MetricsPage />
-          </div>
-          <div className="max-w-screen-xl mx-auto px-2 ">
             <Testimonials />
-          </div>
+        
         </>
       )}
     </>

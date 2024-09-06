@@ -24,8 +24,8 @@ export const Upcoming = () => {
   };
 
   return (
-    <div >
-      <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-border-l border-l-8 text-primary my-12">
+    <div className="max-w-screen-xl mx-auto p-2">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-border-l border-l-8 text-primary my-12">
         Upcoming batches
       </h1>
       <Slider {...settings}>

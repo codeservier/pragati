@@ -10,15 +10,15 @@ import schollbag from "../assets/poster/schollbag.webp";
 
 const CourseProvideByCoaching = () => {
   return (
-    <div className="container mx-auto p-4 my-4">
-      <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-border-l border-l-8 text-primary my-12">
+    <div className="max-w-screen-xl mx-auto px-4 py-8">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-border-l border-l-8 text-primary my-12">
         Courses Provided By Coaching's
       </h1>
-      <div className=" flex justify-center">
-        <div className="container grid justify-between grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-full">
-          {courseData.map((course, index) => (
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courseData.map((course) => (
             <CreditCard
-              key={index}
+              key={course.id}
               courseName={course.courseName}
               courseImg={course.courseImg}
               title={course.title}
@@ -31,6 +31,7 @@ const CourseProvideByCoaching = () => {
 };
 
 export default CourseProvideByCoaching;
+
 const courseData = [
   {
     id: 1,
@@ -53,13 +54,13 @@ const courseData = [
   {
     id: 4,
     title: "Defence",
-    courseName: "NDA, CDS, SSB,AFCAT",
+    courseName: "NDA, CDS, SSB, AFCAT",
     courseImg: defenceicon,
   },
   {
     id: 5,
     title: "CA",
-    courseName: "FOUNDATION, INTERME, FINAL",
+    courseName: "FOUNDATION, INTERMEDIATE, FINAL",
     courseImg: caicon,
   },
   {
@@ -68,5 +69,4 @@ const courseData = [
     courseName: "RAS, RRB, SSC, BANK",
     courseImg: govexamicon,
   },
-  
 ];

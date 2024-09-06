@@ -2,7 +2,7 @@ import React from "react";
 import data from "../../assets/poster/1.png";
 const SingleBanner = ({ image }) => {
   return (
-    <div className="px-4">
+    <div className="max-w-screen-xl mx-auto p-2">
       <img
         src={image || data}
         alt="single-banner"

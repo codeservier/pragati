@@ -1,4 +1,3 @@
-
 export default function App() {
   function fok() {
     var j = document.getElementById("arr");
@@ -62,62 +61,40 @@ export default function App() {
   });
 
   return (
-    <div className="App">
-   
-
-  
-
-      <main className="bg-gray-100 p-8">
+    <div>
+      <main className="max-w-screen-xl mx-auto p-2">
         <div id="front" className="text-center">
-          <h1 className="text-3xl font-bold mb-4">Welcome, To Ecera System</h1>
+          <h1 className="text-3xl font-bold mb-4">WELCOME TO PRAGATI</h1>
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/about-us-1805547-1537820.png"
             alt="Welcome"
             className="mx-auto mb-4"
           />
           <p className="text-lg">
-            " Our goal is to remove any technical or financial barriers that can
-            prevent you from making your own website. Our powerful tools empower
-            individuals and business owners to create a website, sell online, or
-            reach global audiences. Whether you're a beginner or website expert,
-            we're excited to help you on your journey! "
+            At Pragati Company, we are dedicated to empowering individuals
+            through comprehensive coaching services. Our expert-led programs are
+            designed to unlock your potential and foster personal and
+            professional growth. With a focus on practical skills and tailored
+            guidance, we ensure every learner achieves their goals. Choose
+            Pragati for a transformative coaching experience that drives
+            success.
           </p>
         </div>
 
-        <div id="first" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
-          <img
-            src="https://cdni.iconscout.com/illustration/premium/thumb/growing-business-by-digital-marketing-4217800-3501667.png"
-            alt="Technology"
-            className="w-full h-48 object-cover mb-4"
-          />
-          <h1 className="text-2xl font-bold mb-2">We Offer Innovative Technology Solutions</h1>
-          <p className="text-lg mb-4">
-            EceraSystem is a full-service digital marketing agency with a long
-            history of delivering great results for our clients. We take an
-            individualized approach to every customer project. In some cases
-            we may focus more on SEO, while in others we’ll dig more into PPC,
-            social media or conversion optimization.
-          </p>
-          <h2 className="text-xl font-semibold">UI/UX Design (90%)</h2>
-          <div className="comm flex space-x-4 mb-4">
-            <div id="comm1" className="bg-red-500 h-2 w-full"></div>
-          </div>
-          <h2 className="text-xl font-semibold">APP Development (85%)</h2>
-          <div className="comm flex space-x-4 mb-4">
-            <div id="comm2" className="bg-red-500 h-2 w-full"></div>
-          </div>
-          <h2 className="text-xl font-semibold">WEB Development (70%)</h2>
-          <div className="comm flex space-x-4 mb-4">
-            <div id="comm3" className="bg-red-500 h-2 w-full"></div>
-          </div>
-        </div>
+    
 
-        <div id="fourth" className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg">
+        <div
+          id="fourth"
+          className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg"
+        >
           <h2 className="text-xl font-semibold mb-4">TECHNOLOGY INDEX</h2>
           <h1 className="text-3xl font-bold mb-4">
             Real Time Monitoring Your Infrastructure Branded Digital Solutions
           </h1>
-          <div id="fourth_cards" className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            id="fourth_cards"
+            className="grid grid-cols-2 md:grid-cols-3 gap-4"
+          >
             <div className="text-center">
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/data-analysis-27-681042.png"
@@ -161,7 +138,7 @@ export default function App() {
           </div>
         </div>
 
-        <div id="second" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
+        <div id="second" className="reveal mt-8 p-4 bg-white ">
           <div className="container flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-4 md:mb-0">
               <h1 className="text-2xl font-bold mb-2">WE PROVIDE</h1>
@@ -184,10 +161,13 @@ export default function App() {
               <h1 className="text-2xl font-bold mb-2">WE HAVE</h1>
               <h2 className="text-xl font-semibold mb-2">Global Partnership</h2>
               <p className="text-lg">
-                Our Global partners are spread across 12 countries and our client base
-                is growing day by day. Many of my clients are repeat customers
-                and several have come to us through high recommendation and
-                referrals. Our clients hail from different domains.
+                At Pragati Company, we are dedicated to empowering individuals
+                through comprehensive coaching services. Our expert-led programs
+                are designed to unlock your potential and foster personal and
+                professional growth. With a focus on practical skills and
+                tailored guidance, we ensure every learner achieves their goals.
+                Choose Pragati for a transformative coaching experience that
+                drives success.
               </p>
             </div>
             <img
@@ -199,7 +179,9 @@ export default function App() {
           <div className="container flex flex-col md:flex-row items-center justify-between mt-8">
             <div className="md:w-1/2 mb-4 md:mb-0">
               <h1 className="text-2xl font-bold mb-2">OUR GOAL</h1>
-              <h2 className="text-xl font-semibold mb-2">Same Quality at Low Cost</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                Same Quality at Low Cost
+              </h2>
               <p className="text-lg">
                 We have unique and revolutionary business principles, ‘Same
                 quality but significantly lower cost’. We aim to fulfill the
@@ -220,14 +202,17 @@ export default function App() {
           <div className="container flex flex-col md:flex-row items-center justify-between mt-8">
             <div className="md:w-1/2 mb-4 md:mb-0">
               <h1 className="text-2xl font-bold mb-2">OUR STRENGTHS</h1>
-              <h2 className="text-xl font-semibold mb-2">Intelligent Use of Technology and Human Resource</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                Intelligent Use of Technology and Human Resource
+              </h2>
               <p className="text-lg">
                 We provide every client with a dedicated, full-time work from
-                home employee from their comfortable place. To successfully achieve this
-                objective, we rely on management, infrastructure, hardware, and
-                the latest technology to bridge physical distance and time zone
-                differences. We provide the experience of making employees work
-                from home for the company as real as if they were working in the company.
+                home employee from their comfortable place. To successfully
+                achieve this objective, we rely on management, infrastructure,
+                hardware, and the latest technology to bridge physical distance
+                and time zone differences. We provide the experience of making
+                employees work from home for the company as real as if they were
+                working in the company.
               </p>
             </div>
             <img
@@ -238,28 +223,39 @@ export default function App() {
           </div>
         </div>
 
-        <div id="third" className="reveal mt-8 p-4 bg-white shadow-lg rounded-lg">
-          <h3 className="text-center text-2xl font-semibold mb-4">OUR PROCESS</h3>
+        <div
+          id="third"
+          className="reveal mt-8 p-4 bg-white border border-gray-300 rounded-lg"
+        >
+          <h3 className="text-center text-2xl font-semibold mb-4">
+            OUR PROCESS
+          </h3>
           <h1 className="text-center text-3xl font-bold mb-4">
             Driving Client Results Utilizing New Innovation Points of View
           </h1>
           <div id="third_cards" className="space-y-4">
             <div>
-              <h2 className="text-xl font-semibold mb-2">End to End Solutions and Services Guaranteed</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                End to End Solutions and Services Guaranteed
+              </h2>
               <p>
                 Fusce nec tellus sed augue semper porta. Mauris massa.
                 Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
               </p>
             </div>
             <div>
-              <h2 className="text-xl font-semibold mb-2">Ahead of The Curve We Future-proof Your IT</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                Ahead of The Curve We Future-proof Your IT
+              </h2>
               <p>
                 Fusce nec tellus sed augue semper porta. Mauris massa.
                 Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
               </p>
             </div>
             <div>
-              <h2 className="text-xl font-semibold mb-2">Experience Certainty Every Project Executed Successfully</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                Experience Certainty Every Project Executed Successfully
+              </h2>
               <p>
                 Fusce nec tellus sed augue semper porta. Mauris massa.
                 Vestibulum lacinia arcu eget nulla. Per inceptos himenaeos.
@@ -268,10 +264,16 @@ export default function App() {
           </div>
         </div>
 
-        <div id="fifth" className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg">
+        <div
+          id="fifth"
+          className="reveal mt-8 p-4 bg-gray-800 text-white rounded-lg"
+        >
           <h1 className="text-2xl font-bold mb-4">ECERA SYSTEM</h1>
           <div className="flex flex-col space-y-4">
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+            <a
+              href="#"
+              className="flex items-center space-x-2 text-white hover:text-gray-300"
+            >
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/address-blue-circle-location-map-marker-navigation-icon-45868.png"
                 alt="Address"
@@ -282,7 +284,10 @@ export default function App() {
                 <p>4813 Woodland Ave Royal Oak, Michigan - 48073, USA</p>
               </span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+            <a
+              href="#"
+              className="flex items-center space-x-2 text-white hover:text-gray-300"
+            >
               <img
                 src="https://cdn.iconscout.com/icon/free/png-64/phone-2666572-2212584.png"
                 alt="Phone"
@@ -293,7 +298,10 @@ export default function App() {
                 <p>+1 248 672 1972</p>
               </span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-300">
+            <a
+              href="#"
+              className="flex items-center space-x-2 text-white hover:text-gray-300"
+            >
               <img
                 src="https://cdn.iconscout.com/icon/free/png-64/gmail-2489176-2082900.png"
                 alt="E-mail"
@@ -307,9 +315,6 @@ export default function App() {
           </div>
         </div>
       </main>
-
-  
     </div>
   );
 }
-

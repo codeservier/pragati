@@ -3,8 +3,8 @@ import React from 'react';
 
 const MetricsPage = () => {
   return (
-    <div className=" bg-gray-100 p-6 rounded-lg ">
-      <div className="container mx-auto">
+    <div className=" bg-gray-100 p-6 rounded-lg  ">
+      <div className="container mx-auto max-w-screen-xl ">
         <h1 className="text-3xl font-bold mb-8 text-center ">A Platform Trusted by Students Worldwide</h1>
         <p className="text-center text-gray-600 mb-12">Don't Just Take Our Word for It. Delve into the Numbers and Witness the Excellence for Yourself!</p>
 

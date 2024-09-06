@@ -45,7 +45,7 @@ const TopInstructor = () => {
   ];
 
   return (
-    <div className="container mx-auto p-4 my-4">
+    <div className="container max-w-screen-xl mx-auto p-4 my-4">
       <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-border-l  text-primary my-12">
         Our Instructors
       </h1>
