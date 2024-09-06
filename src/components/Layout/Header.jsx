@@ -23,7 +23,7 @@ const Header = () => {
           <Link to="/" className="hover:text-secondary text-white"> 
             Home
           </Link>
-          <Link to="/mylearning" className="hover:text-secondary text-white">
+          <Link to="/allcoachings" className="hover:text-secondary text-white">
             Coaching's
           </Link>
           <Link to="/about" className="hover:text-secondary text-white">
@@ -32,7 +32,7 @@ const Header = () => {
           <Link to="/new-contact" className="hover:text-secondary text-white">
             Contact Us
           </Link>
-          <Link to="/new-contact" className="hover:text-secondary text-white">
+          <Link to="/faq" className="hover:text-secondary text-white">
             FAQ
           </Link>
         </nav>
@@ -57,14 +57,17 @@ const Header = () => {
           <Link to="/" className="block px-4 py-2 hover:bg-gray-200">
             Home
           </Link>
-          <Link to="/mylearning" className="block px-4 py-2 hover:bg-gray-200">
-            My Learning
+          <Link to="/allcoachings" className="hover:text-secondary text-white">
+            Coaching's
           </Link>
           <Link to="/about" className="block px-4 py-2 hover:bg-gray-200">
             About
           </Link>
           <Link to="/new-contact" className="block px-4 py-2 hover:bg-gray-200">
             Contact
+          </Link>
+          <Link to="/faq" className="hover:text-secondary text-white">
+            FAQ
           </Link>
           <Link to="/login" className="block px-4 py-2 hover:bg-gray-200">
             Login

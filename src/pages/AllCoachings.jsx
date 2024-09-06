@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "../components/card/Card";
+import defaultCoverImage from "../assets/placeholder.jpg"; // Adjust the path as needed
 
 import Loader from "../components/loader/Loader";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -90,7 +91,8 @@ const AllCoachings = () => {
                   key={card.id}
                   title={card.coachingname}
                   description={card.shortdescription}
-                  image={card.coachingLogoUrl}
+                  logo={card.coachingLogoUrl}
+                  coverPic={card.coachingCoverPicUrl || defaultCoverImage}
                   onClick={() => handleCardClick(card.id)}
                 />
               ))}

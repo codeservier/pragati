@@ -13,7 +13,7 @@ import image6 from "../assets/instructor/ouristructor/v1.png";
 const OurInstructor = () => {
     const cardsData = [
         {
-          title: "S.K. Singh",
+          title: "Sunil Kumar Singh",
           description: "B.SC, B.Ed Polytechnic Diploma (Electronics Engg.) | 8+ Years Exp. | PC Science, Hindi",
           image: image1,
           about: "A highly experienced educator in Electronics Engineering and Computer Science. Specializes in teaching PC Science and Hindi, leveraging both theoretical and practical knowledge to help students excel.",
@@ -29,7 +29,7 @@ const OurInstructor = () => {
           experience: "10+ Years in Math reasoning and English.",
         },
         {
-          title: "V.K. Singh",
+          title: "Vivek Kumar Singh",
           description: "B.SC (Math) Polytechnic Diploma (Electronics Engg.) | 9+ Years Exp. | Mathematics, Physics",
           image: image3,
           about: "An expert in Mathematics and Physics, combining strong analytical skills with a practical approach to teaching. Dedicated to helping students understand foundational and advanced concepts in these subjects.",

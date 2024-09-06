@@ -8,7 +8,7 @@ import OurCourses from "../components/coachingdetailstab/OurCourses.jsx";
 import  OurInstructor  from "../pages/OurInstructor.jsx";
 import PopUpPages from "../pages/PopUpPages.jsx";
 import SlotsAvailability from "../components/coachingdetailstab/SlotsAvailability.jsx";
-const dummyImage = "https://via.placeholder.com/600x400.png?text=Coaching+Poster"
+import defaultCoverImage from "../assets/placeholder.jpg";
 
 
 const CourseDetailPage = () => {
@@ -190,7 +190,8 @@ const CourseDetailPage = () => {
         {showPopUp && (
           <PopUpPages
             onClose={() => setShowPopUp(false)}
-            posterImageUrl={userData?.coachingLogoUrl|| dummyImage}
+            logoImageUrl={userData?.coachingLogoUrl|| defaultCoverImage}
+            // coachingCoverPicUrl ={userData?.coachingCoverPicUrl || defaultCoverImage }
             coachingname={userData?.name}
             email={userData?.email}
             mobileNumber={userData?.phoneNumber}

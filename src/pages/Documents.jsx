@@ -14,10 +14,6 @@ import {
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import CustomInput from "../components/customInput/CustomInput.jsx";
-// import Logo from "../assets/logo/Logo";
-
-
-
 
 const Documents = () => {
   const location = useLocation();
@@ -27,15 +23,19 @@ const Documents = () => {
     password: "",
     confirmPassword: "",
     shortdescription: "",
-    longdescription:"",
+    longdescription: "",
     agreedToTerms: false,
     coachingLogo: "",
+    coachingCoverPic:"",
     domain: "",
-    domainurl:""
+    domainurl: "",
+    coverPic: "",
   });
   const [errors, setErrors] = useState({});
-  const [logoFile, setLogoFile] = useState(null); // To store the selected file
-  const [previewUrl, setPreviewUrl] = useState("");
+  const [logoFile, setLogoFile] = useState(null); // Logo file state
+  const [coverFile, setCoverFile] = useState(null); // Cover picture file state
+  const [logoPreviewUrl, setLogoPreviewUrl] = useState(""); // Logo preview state
+  const [coverPreviewUrl, setCoverPreviewUrl] = useState(""); // Cover picture preview state
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,7 +68,7 @@ const Documents = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
+  const handleLogoFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const img = new Image();
@@ -76,26 +76,45 @@ const Documents = () => {
       img.onload = () => {
         if (img.width === 512 && img.height === 512) {
           setLogoFile(file);
-          setPreviewUrl(URL.createObjectURL(file)); // Create a URL for the image
+          setLogoPreviewUrl(URL.createObjectURL(file)); // Create a URL for the image
           setErrors((prevErrors) => ({
             ...prevErrors,
             coachingLogo: "", // Clear any previous errors
           }));
         } else {
           setLogoFile(null);
-          setPreviewUrl("");
+          setLogoPreviewUrl("");
           setErrors((prevErrors) => ({
             ...prevErrors,
-            coachingLogo: "Image must be 512X512 pixels.",
+            coachingLogo: "Logo image must be 512x512 pixels.",
           }));
         }
       };
     } else {
       setLogoFile(null);
-      setPreviewUrl("");
+      setLogoPreviewUrl("");
       setErrors((prevErrors) => ({
         ...prevErrors,
         coachingLogo: "Please upload a logo image",
+      }));
+    }
+  };
+
+  const handleCoverFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setCoverFile(file);
+      setCoverPreviewUrl(URL.createObjectURL(file)); // Create a URL for the image
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        coachingCoverPic: "", // Clear any previous errors
+      }));
+    } else {
+      setCoverFile(null);
+      setCoverPreviewUrl("");
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        coachingCoverPic: "Please upload a cover picture",
       }));
     }
   };
@@ -115,92 +134,99 @@ const Documents = () => {
   };
 
   const handleRegister = async () => {
-    const { email, longdescription, password, shortdescription, confirmPassword, coachingLogo, domain, domainurl } = formData;
-
+    const {
+      email,
+      longdescription,
+      password,
+      shortdescription,
+      confirmPassword,
+      coachingLogo,
+      coverPic,
+      domain,
+      domainurl
+    } = formData;
+  
     const newErrors = {};
     if (!password) newErrors.password = "Password is required";
-    if (!longdescription) newErrors.longdescription = "You Must enter Long Description ";
-    if (!shortdescription) newErrors.shortdescription = "You Must enter Short Description ";
+    if (!longdescription) newErrors.longdescription = "You must enter a long description.";
+    if (!shortdescription) newErrors.shortdescription = "You must enter a short description.";
     if (password !== confirmPassword)
       newErrors.confirmPassword = "Passwords do not match";
     if (!formData.agreedToTerms)
       newErrors.terms = "You must agree to the terms and conditions";
-
+  
     if (!coachingLogo) {
       newErrors.coachingLogo = "Please select if you have a coaching logo";
     } else if (coachingLogo === "yes" && !logoFile) {
       newErrors.coachingLogo = "Please upload a logo image";
     }
-
+  
     if (!domain) {
       newErrors.domain = "Please select if you have a domain";
     } else if (domain === "yes" && !domainurl) {
       newErrors.domain = "Please write your domain";
     }
-
+  
     setErrors(newErrors);
-
+  
     if (Object.keys(newErrors).length > 0) {
-      // Show errors in a pop-up
       const errorMessages = Object.values(newErrors).join("\n");
       alert(errorMessages);
       return;
     }
-
+  
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
+  
       // Get the latest user ID from Firestore
       const usersCollectionRef = collection(db, "registration");
       const q = query(usersCollectionRef, orderBy("userId", "desc"), limit(1));
       const querySnapshot = await getDocs(q);
-
+  
       let newUserId;
       if (!querySnapshot.empty) {
         const lastUserDoc = querySnapshot.docs[0];
         const lastUserId = lastUserDoc.data().userId;
-
-        // Generate new user ID
         newUserId = generateSequentialId(lastUserId);
       } else {
-        // If no users exist, start with PRA{year}00001
         newUserId = `PRA${getCurrentYear()}00001`;
       }
-
-      // Handle logo file upload if necessary
+  
       let logoUrl = "";
       if (coachingLogo === "yes" && logoFile) {
-        const storageRef = ref(storage, `logos/${user.uid}/${logoFile.name}`);
-        await uploadBytes(storageRef, logoFile);
-        logoUrl = await getDownloadURL(storageRef);
+        const logoStorageRef = ref(storage, `logos/${user.uid}/${logoFile.name}`);
+        await uploadBytes(logoStorageRef, logoFile);
+        logoUrl = await getDownloadURL(logoStorageRef);
       }
-
+  
+      let coverUrl = "";
+      if (coverPic === "yes" && coverFile) {  // Corrected from formData.coverPic to coverPic
+        const coverStorageRef = ref(storage, `covers/${user.uid}/${coverFile.name}`);
+        await uploadBytes(coverStorageRef, coverFile);
+        coverUrl = await getDownloadURL(coverStorageRef);
+      }
+  
       // Save the new user data to Firestore
       await setDoc(doc(db, "registration", user.uid), {
         userId: newUserId,
-        ...formData, // Save all form data
-        coachingLogoUrl: logoUrl, // Save the logo URL
+        ...formData,
+        coachingLogoUrl: logoUrl,
+        coachingCoverPicUrl: coverUrl
       });
-
-      // Show success message and redirect to homepage
+  
       alert("Congratulations!");
       navigate("/"); // Redirect to homepage
     } catch (error) {
       console.error("Error signing up:", error);
-      const errorMessage = error.message.includes("email")
-        ? `Error signing up: ${error.message}`
-        : `Error signing up: ${error.message}`;
-
+      const errorMessage = `Error signing up: ${error.message}`;
       if (window.confirm(errorMessage)) {
-        navigate("/register"); // Replace with the actual route to your email page
+        navigate("/register");
       }
     }
   };
+  
+  
 
   return (
     <div className="flex max-w-screen-xl mx-auto justify-center items-center p-4">
@@ -209,7 +235,7 @@ const Documents = () => {
           <img src={logo} width="50" height="50" fill="#FF5733" />
         </div>
 
-        <h1 className="text-2xl font-bold text-center">Register Your Coaching </h1>
+        <h1 className="text-2xl font-bold text-center">Register Your Coaching</h1>
         {/* logo start */}
         <section>
           <h2 className="text-xl font-semibold mb-2">Uploads</h2>
@@ -243,27 +269,27 @@ const Documents = () => {
             <div className="flex flex-col items-start space-y-4">
               <div className="w-full border rounded flex">
                 <label className="flex items-center p-4 w-1/3">
-                  <input 
-                    id="fileInput"
-                    type="file" 
-                    accept="image/*" 
-                    onChange={handleFileChange} 
+                  <input
+                    id="logoFileInput"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleLogoFileChange}
                     className="hidden"
                   />
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="bg-primary text-white px-4 py-2 rounded"
-                    onClick={() => document.getElementById('fileInput').click()} // Trigger file input click
+                    onClick={() => document.getElementById('logoFileInput').click()} // Trigger file input click
                   >
-                    Choose Image
+                    Choose Logo Image
                   </button>
                 </label>
                 <div className="w-px bg-gray-300 h-auto mx-4"></div> {/* Vertical divider */}
-                {previewUrl && (
+                {logoPreviewUrl && (
                   <div className="relative flex-1 p-4 items-center">
-                    <img 
-                      src={previewUrl} 
-                      alt="Preview" 
+                    <img
+                      src={logoPreviewUrl}
+                      alt="Logo Preview"
                       className="w-40 h-40 object-cover border rounded"
                     />
                   </div>
@@ -274,6 +300,70 @@ const Documents = () => {
           <span className="text-red-600 block mt-1">{errors.coachingLogo}</span>
         </section>
         {/* logo ended */}
+
+        {/* cover pic start */}
+        <section>
+          <h3 className="text-xl font-semibold mb-3">Cover Pic:-</h3>
+          <div className="flex items-center space-x-4 mb-4">
+            <p className="mr-4 text-gray-400">Do you have Cover pic?</p>
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                name="coverPic"
+                value="yes"
+                checked={formData.coverPic === "yes"}
+                onChange={() => handleOptionChange("coverPic", "yes")}
+                className="mr-2"
+              />
+              Yes
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                name="coverPic"
+                value="no"
+                checked={formData.coverPic === "no"}
+                onChange={() => handleOptionChange("coverPic", "no")}
+                className="mr-2"
+              />
+              No
+            </label>
+          </div>
+          {formData.coverPic === "yes" && (
+            <div className="flex flex-col items-start space-y-4">
+              <div className="w-full border rounded flex">
+                <label className="flex items-center p-4 w-1/3">
+                  <input
+                    id="coverFileInput"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleCoverFileChange}
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    className="bg-primary text-white px-4 py-2 rounded"
+                    onClick={() => document.getElementById('coverFileInput').click()} // Trigger file input click
+                  >
+                    Choose Cover Image
+                  </button>
+                </label>
+                <div className="w-px bg-gray-300 h-auto mx-4"></div> {/* Vertical divider */}
+                {coverPreviewUrl && (
+                  <div className="relative flex-1 p-4 items-center">
+                    <img
+                      src={coverPreviewUrl}
+                      alt="Cover Preview"
+                      className="w-40 h-40 object-cover border rounded"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+          <span className="text-red-600 block mt-1">{errors.coverPic}</span>
+        </section>
+        {/* cover pic end */}
 
         {/* domain section start */}
         <section>
@@ -305,7 +395,7 @@ const Documents = () => {
           </div>
           {formData.domain === "yes" && (
             <div className="space-y-4">
-            <CustomInput
+              <CustomInput
                 id="domainurl"
                 type="text"
                 placeholder="domainurl"
@@ -320,9 +410,8 @@ const Documents = () => {
         </section>
         {/* domain section end */}
 
-
-           {/* decription started */}
-           <section className="mb-6">
+        {/* description started */}
+        <section className="mb-6">
           <h2 className="text-xl font-semibold mb-4">Description :-</h2>
           <div className="space-y-4">
             <div className="md:flex md:gap-4">
@@ -347,8 +436,7 @@ const Documents = () => {
             </div>
           </div>
         </section>
-           {/* description ended */}
-
+        {/* description ended */}
 
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-4">Password</h2>
