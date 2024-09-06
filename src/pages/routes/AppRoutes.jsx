@@ -25,8 +25,7 @@ import Dashboard from '../../Admin/pages/Dashboard';
 import AdLayout from '../../Admin/components/shared/AdLayout';
 import Product from '../../Admin/pages/Branches';
 import AllCoachings from '../AllCoachings';
-
-
+import FaqPage from "../FaqPage"
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -38,9 +37,10 @@ const AppRoutes = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/new-contact" element={<NewContact />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/mylearning" element={<AllCoachings/>} />
+          <Route path="/allcoachings" element={<AllCoachings/>} />
           <Route path="/coursedetail" element={<CourseDetailPage />} />
           <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/faq" element={<FaqPage/>}/>
           {/* <Route path="/profile/subscription" element={<Subscription />} /> */}
           {/* <Route path="/profile/paymentMethods" element={<PaymentMethod />} /> */}
           {/* <Route path="/profile/publicProfile" element={<PublicProfile />} /> */}

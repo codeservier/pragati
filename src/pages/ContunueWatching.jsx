@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react"; 
 import Card from "../components/card/Card";
-
 import Loader from "../components/loader/Loader";
 import { useNavigate, useLocation } from "react-router-dom";
 import { db, collection, getDocs } from "../../firebase";
+import defaultCoverImage from "../assets/placeholder.jpg"; // Adjust the path as needed
 
 const ContinueWatching = () => {
   const navigate = useNavigate();
@@ -27,11 +27,10 @@ const ContinueWatching = () => {
         }));
         const cardData = allDocuments.map((doc) => ({
           id: doc.id,
-          title: doc.title || "No Title",
-          district: doc.district || "No District",
-          coachingname: doc.coachingname || "No Coaching Name",
+          title: doc.coachingname || "No Coaching Name",
           address: doc.address || "No Address",
-          image: doc.coachingLogoUrl || "default-image-url",
+          logo: doc.coachingLogoUrl || "default-logo-url",  // Changed field name
+          coverPic: doc.coachingCoverPicUrl || defaultCoverImage  // Changed field name
         }));
 
         setCardsData(cardData);
@@ -74,8 +73,7 @@ const ContinueWatching = () => {
   }, [location]);
 
   const handleCardClick = (id) => {
-    // console.log(card);
-    navigate(`/coursedetail`, { state:{id }});
+    navigate(`/coursedetail`, { state:{ id } });
   };
 
   return (
@@ -94,9 +92,10 @@ const ContinueWatching = () => {
               {cardsData.map((card) => (
                 <Card
                   key={card.id}
-                  title={card.coachingname}
+                  title={card.title}
                   description={card.address}
-                  image={card.image}
+                  logo={card.logo}
+                  coverPic={card.coverPic}
                   onClick={() => handleCardClick(card.id)}
                 />
               ))}
