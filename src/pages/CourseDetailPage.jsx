@@ -75,7 +75,7 @@ const CourseDetailPage = () => {
     <div className="max-w-screen-xl mx-auto px-2">
       <div className="container mx-auto p-4 my-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-2">
-          <div>
+          <div className="w-full h-96 object-cover rounded-lg">
             <img
               src={userData?.coachingLogoUrl || dummyImage}
               alt="Course"
