@@ -108,7 +108,28 @@ const testimonials = [
     quote: '“Pragati made my search for the best coaching classes easy and stress-free. The process was quick, and I’m thrilled with the results.”',
     avatar: 'https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female-1.png',
     rating: 5
-  }
+  },
+  {
+    name: 'Arjun Mehta',
+    position: 'Student',
+    quote: '“The personalized recommendations from Pragati were incredibly helpful. I found a coaching class that perfectly suited my learning style.”',
+    avatar: 'https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png',
+    rating: 5
+  },
+  {
+    name: 'Simran Kaur',
+    position: 'Student',
+    quote: '“I was impressed with how quickly Pragati identified the right coaching options for me. The entire experience was smooth and efficient.”',
+    avatar: 'https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female-2.png',
+    rating: 5
+  },
+  {
+    name: 'Vikram Singh',
+    position: 'Student',
+    quote: '“The coaching classes I found through Pragati exceeded my expectations. The process was straightforward, and the support was outstanding.”',
+    avatar: 'https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-3.png',
+    rating: 5
+  },
 ];
 
 export default Testimonials;

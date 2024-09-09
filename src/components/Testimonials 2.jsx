@@ -108,7 +108,7 @@ const testimonials = [
     quote: '“Pragati made my search for the best coaching classes easy and stress-free. The process was quick, and I’m thrilled with the results.”',
     avatar: 'https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female-1.png',
     rating: 5
-  }
+  },
 ];
 
 export default Testimonials;

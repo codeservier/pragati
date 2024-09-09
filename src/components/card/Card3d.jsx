@@ -7,7 +7,7 @@ const CreditCard = ({ courseName, courseImg, title }) => {
 
   return (
     <div
-      className=" border rounded-md overflow-hidden transition-all duration-200 max-w-[400px] sm:w-full w-[328px] lg:p-6 md:p-5 p-4 relative flex flex-row cursor-pointer"
+      className=" border border-secondary bg-secondary/5 rounded-md overflow-hidden transition-all duration-200 max-w-[400px] sm:w-full w-[328px] lg:p-6 md:p-5 p-4 relative flex flex-row cursor-pointer"
       onClick={() => console.log("Hola")}
     >
       <div className="flex flex-col md:w-[232px] w-[226px]">
@@ -25,24 +25,17 @@ const CreditCard = ({ courseName, courseImg, title }) => {
           ))}
         </div>
         <a className="lg:mt-5 md:mt-4 mt-3 flex flex-row items-center text-[#1B2124] hover:text-[#5A4BDA] duration-200">
-          <div className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] cursor-pointer pr-3">
+          {/* <div className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] cursor-pointer pr-3">
             Explore Category
-          </div>
-          <div className="bg-[#F8F8F8] flex items-center rounded-full duration-200 md:px-3 px-2 md:py-1 py-1">
+          </div> */}
+          {/* <div className="bg-[#F8F8F8] flex items-center rounded-full duration-200 md:px-3 px-2 md:py-1 py-1">
             <img src={arrow} alt="Arrow" />
-          </div>
+          </div> */}
         </a>
       </div>
-      <div className="md:w-[106px] flex items-center w-[56px]">
-        <div className="absolute aspect-square flex items-center justify-left rounded-full bg-secondary h-[100%] md:h-[125%]">
-          <img
-            alt="exam-category"
-            loading="lazy"
-            width="40"
-            height="40"
-            className="w-10 h-10 md:w-[46px] md:h-[46px] xl:w-[72px] xl:h-[72px] bg-center bg-cover bg-no-repeat md:ml-4 xl:ml-1 ml-6 transition-transform duration-300"
-            src={courseImg}
-          />
+      <div className="relative flex items-center justify-center w-full md:w-[106px] h-[100%] border rounded-xl  border-secondary">
+        <div className="flex items-center justify-center rounded-xl  p-2 md:p-3">
+          {courseImg}
         </div>
       </div>
     </div>
