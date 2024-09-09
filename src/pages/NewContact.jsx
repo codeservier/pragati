@@ -8,8 +8,6 @@ import {
 import { db } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "emailjs-com";
-import CustomInput from "../components/customInput/CustomInput";
-import CustomButton from "../components/custombutton/custombutton";
 
 const NewContact = () => {
   const [formData, setFormData] = useState({
