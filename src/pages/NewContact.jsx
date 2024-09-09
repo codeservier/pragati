@@ -8,7 +8,7 @@ import {
 import { db } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "emailjs-com";
-import CustomButton from "../components/custombutton/custombutton";
+import CustomButton from "../components/custombutton/Custombutton";
 import { FaBuilding } from 'react-icons/fa';
 
 const NewContact = () => {

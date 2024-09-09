@@ -1,6 +1,6 @@
 import React from 'react';
 import studentimg from '../assets/svg/logo.svg'
-import CustomButton from './custombutton/custombutton';
+import CustomButton from '../components/custombutton/Custombutton';
 
 const HeroBottom = () => {
   return (
