@@ -61,6 +61,7 @@ const TopInstructor = () => {
       </h1>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+        {/* jdhgndfjugndjn */}
         {cardsData.map((card, index) => (
           <div
             key={index}
