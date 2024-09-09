@@ -1,8 +1,7 @@
 import React, { useState } from "react"; 
 import Faq from "../components/FAQ/Faq.jsx";
 
-// Import your image or use a URL
-import faqImage from "../assets/svg/animated.svg"; // Example image import
+import faqImage from "../assets/svg/faq.svg"; 
 
 export default function FaqPage() {
   const [faqs, setFaqs] = useState([

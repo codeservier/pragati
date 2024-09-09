@@ -16,13 +16,7 @@ const HeroBottom = () => {
       </div>
       <div className="sm:py-4 py-6">
         <div className="relative justify-items-center sm:text-[14px] sm:leading-[20px] text-[12px] leading-[18px] font-[500]">
-          {/* <img
-            alt="hero-student"
-            fetchpriority="high"
-            loading="eager"
-            className="sm:hidden block h-[225px] w-[320px] bg-center bg-no-repeat bg-contain"
-            src="https://static.pw.live/ua/images/hero-student-m.webp"
-          /> */}
+  
           <img
             alt="hero-student"
             fetchpriority="high"
