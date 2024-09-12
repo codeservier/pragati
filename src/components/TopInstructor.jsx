@@ -65,7 +65,7 @@ const TopInstructor = () => {
         {cardsData.map((card, index) => (
           <div
             key={index}
-            className="border border-gray-200 rounded-lg p-4 flex items-center  bg-primary"
+            className="border border-gray-200 flex-col-reverse md:flex-row rounded-lg p-4 flex items-center  bg-primary"
           >
             <div className="flex-auto">
               <h2 className="text-3xl font-extrabold text-mywhite mb-2">
@@ -85,7 +85,7 @@ const TopInstructor = () => {
                 <span className="pl-4 pt-2 text-white">{card.experience}</span>
               </p>
             </div>
-            <div className="flex-shrink-0 ml-4">
+            <div className="flex-shrink-0 ml-4  p-1 bg-secondary  rounded-full">
               <img
                 src={card.image}
                 alt={card.title}
